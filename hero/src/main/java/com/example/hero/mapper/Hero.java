@@ -21,25 +21,25 @@ public interface Hero {
    * 全英雄を取得する
    * */
   @Select("SELECT id,name FROM Hero")
-  List<Hero> selectHeroList();
+  List<com.example.hero.model.entity.Hero> selectHeroList();
 
   /**
    * 指定したIDの英雄を取得する
    * */
   @Select("SELECT id,name FROM Hero WHERE id = #{id}")
-  Hero selectHeroById(Integer id);
+  com.example.hero.model.entity.Hero selectHeroById(Integer id);
 
   /**
    * 指定した文字が含まれる名前の英雄を取得する
    * */
   @Select("SELECT id,name FROM Hero WHERE name LIKE %#{name}%")
-  List<Hero> selectHeroByName(String name);
+  List<com.example.hero.model.entity.Hero> selectHeroByName(String name);
 
   /**
    * 新たな英雄を登録する
    * */
   @Insert("INSERT INTO Hero (id, name) VALUES(#{id} , #{name})")
-  Boolean insertHero(Hero hero);
+  Boolean insertHero(com.example.hero.model.entity.Hero hero);
 
   /**
    * 指定したIDの英雄を削除する
@@ -51,5 +51,5 @@ public interface Hero {
    * 指定したIDの英雄の名前を変更する
    * */
   @Update("UPDATE Hero SET name = #{name} WHERE id = #{id}")
-  Boolean deleteHero(Hero hero);
+  Boolean deleteHero(com.example.hero.model.entity.Hero hero);
 }
