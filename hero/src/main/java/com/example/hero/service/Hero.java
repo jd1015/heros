@@ -13,15 +13,15 @@ public interface Hero {
   /**
    * 全英雄を取得する
    * */
-  List<Hero> getHeroList();
+  List<com.example.hero.model.entity.Hero> getHeroList();
   /**
    * 指定した情報の英雄を取得する
    * */
-  List<Hero> getHero(Hero hero);
+  List<com.example.hero.model.entity.Hero> getHero(com.example.hero.model.entity.Hero hero);
   /**
    * 英雄を登録する
    * */
-  Boolean addHero(Hero hero);
+  Boolean addHero(com.example.hero.model.entity.Hero hero);
   /**
    * 英雄を削除する
    * */
@@ -29,5 +29,5 @@ public interface Hero {
   /**
    * 英雄の名前を変更する
    * */
-  Boolean setHeroName(Hero hero);
+  Boolean setHeroName(com.example.hero.model.entity.Hero hero);
 }
