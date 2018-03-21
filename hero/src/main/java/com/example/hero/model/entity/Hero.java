@@ -20,6 +20,13 @@ public class Hero {
     this.name = null;
   }
   /**
+   * コンストラクタ
+   */
+  public Hero(Integer id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+  /**
    * @return id
    */
   public Integer getId() {
