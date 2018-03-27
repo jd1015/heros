@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class HeroImpl implements Hero {
 
   @Autowired
-  private com.example.hero.mapper.Hero heroMapper;
+  private com.example.hero.mapper.HeroMapper heroMapper;
 
   /* (非 Javadoc)
    * @see com.example.hero.service.Hero#getHeroList()
@@ -53,7 +53,7 @@ public class HeroImpl implements Hero {
    */
   @Override
   public Boolean removeHeroName(Integer id) {
-    return heroMapper.deleteHero(id);
+    return heroMapper.deleteHeroById(id);
   }
 
   /* (非 Javadoc)

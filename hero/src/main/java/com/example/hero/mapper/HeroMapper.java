@@ -16,7 +16,7 @@ import org.apache.ibatis.annotations.Update;
  *
  */
 @Mapper
-public interface Hero {
+public interface HeroMapper {
   /**
    * 全英雄を取得する
    * */
@@ -45,7 +45,7 @@ public interface Hero {
    * 指定したIDの英雄を削除する
    * */
   @Delete("DELETE FROM Hero WHERE id = #{id}")
-  Boolean deleteHero(Integer id);
+  Boolean deleteHeroById(Integer id);
 
   /**
    * 指定したIDの英雄の名前を変更する
