@@ -15,6 +15,13 @@ public class Hero {
   private final String name;
 
   /**
+   * デフォルトコンストラクタ
+   * */
+  public Hero() {
+    this.id = null;
+    this.name = null;
+  }
+  /**
    * コンストラクタ
    * */
   public Hero(Integer id, String name) {

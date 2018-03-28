@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,7 +53,7 @@ public class Hero {
    * "/heros"で英雄の情報を登録する
    * */
   @RequestMapping(method=RequestMethod.POST)
-  public void postHero(com.example.hero.model.response.Hero hero) {
+  public void postHero(@RequestBody com.example.hero.model.response.Hero hero) {
     heroService.addHero(new com.example.hero.model.entity.Hero(hero.getId(), hero.getName()));
   }
 
