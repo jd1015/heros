@@ -32,7 +32,7 @@ public interface HeroMapper {
   /**
    * 指定した文字が含まれる名前の英雄を取得する
    * */
-  @Select("SELECT id,name FROM Hero WHERE name LIKE %#{name}%")
+  @Select("SELECT id,name FROM Hero WHERE name LIKE '%'|| #{name} ||'%'") // FIXME
   List<com.example.hero.model.entity.Hero> selectHeroByName(String name);
 
   /**

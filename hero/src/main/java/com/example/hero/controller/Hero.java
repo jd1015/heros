@@ -34,10 +34,10 @@ public class Hero {
   }
 
   /**
-   * "/heros/id = xx"で指定したIDの英雄を取得する
+   * "/heros/xx"で指定したIDの英雄を取得する
    * */
   @RequestMapping(value="/{id}",method=RequestMethod.GET)
-  public com.example.hero.model.response.Hero getHeroId(@RequestParam(name="id") Integer id) {
+  public com.example.hero.model.response.Hero getHeroId(@PathVariable Integer id) {
     return entityToResponse(heroService.getHero(new com.example.hero.model.entity.Hero(id, null))).get(0);
   }
 
@@ -58,9 +58,9 @@ public class Hero {
   }
 
   /**
-   * "/heros/name = xx"で指定した名前の英雄を取得する
+   * "/heros/?name=xx"で指定した名前の英雄を取得する
    * */
-  @RequestMapping(value="/{name}",method=RequestMethod.GET)
+  @RequestMapping(value="/", params="name", method=RequestMethod.GET)
   public List<com.example.hero.model.response.Hero> getHeroName(@RequestParam(name="name") String name) {
     return entityToResponse(heroService.getHero(new com.example.hero.model.entity.Hero(null, name)));
   }
