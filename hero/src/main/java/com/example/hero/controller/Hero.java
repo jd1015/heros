@@ -45,7 +45,7 @@ public class Hero {
    * "/heros"で英雄の情報を変更する
    * */
   @RequestMapping(method=RequestMethod.PUT)
-  public void putHero(com.example.hero.model.response.Hero hero) {
+  public void putHero(@RequestBody com.example.hero.model.response.Hero hero) {
     heroService.setHeroName(new com.example.hero.model.entity.Hero(hero.getId(), hero.getName()));
   }
 
