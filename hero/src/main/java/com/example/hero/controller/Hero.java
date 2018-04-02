@@ -65,6 +65,13 @@ public class Hero {
     return entityToResponse(heroService.getHero(new com.example.hero.model.entity.Hero(null, name)));
   }
   /**
+   * "/heros/xx"で指定したIDの英雄を削除する
+   * */
+  @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+  public void deleteHero(@PathVariable Integer id) {
+    heroService.removeHeroName(id);
+  }
+  /**
    * 変換する
    * */
   private List<com.example.hero.model.response.Hero> entityToResponse(List<com.example.hero.model.entity.Hero> entityHeroList) {
