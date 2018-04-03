@@ -38,7 +38,14 @@ public interface HeroMapper {
   /**
    * 新たな英雄を登録する
    * */
-  @Insert("INSERT INTO Hero (id, name) VALUES(#{id} , #{name})")
+  @Insert("<script>"
+      + "INSERT INTO Hero "
+      + " (name"
+      + "<if test=\"id != null\">,id</if>"
+      + ") VALUES(#{name}"
+      + "<if test=\"id != null\">,#{id}</if>"
+      + ")"
+      + "</script>")
   Boolean insertHero(com.example.hero.model.entity.Hero hero);
 
   /**
